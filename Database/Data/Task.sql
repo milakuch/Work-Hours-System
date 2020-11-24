@@ -1,0 +1,15 @@
+insert into Task (TaskID, PochetenDatum, KraenDatum, ProektID, status) values ('258', '2020-01-06', '2020-04-10',  '9330', true);
+insert into Task (TaskID, PochetenDatum, KraenDatum, ProektID, status) values ('5550', '2020-02-11', '2020-06-22', '498', true);
+insert into Task (TaskID, PochetenDatum, KraenDatum, ProektID, status) values ('623', '2020-02-05', '2020-02-12', '4', false);
+insert into Task (TaskID, PochetenDatum, KraenDatum, ProektID, status) values ('423', '2020-02-19', '2020-04-03', '1633', false);
+insert into Task (TaskID, PochetenDatum, KraenDatum, ProektID, status) values ('60675', '2020-02-10', '2020-03-20', '5', true);
+insert into Task (TaskID, PochetenDatum, KraenDatum, ProektID, status) values ('314', '2020-02-11', '2020-02-26', '74', false);
+insert into Task (TaskID, PochetenDatum, KraenDatum, ProektID, status) values ('63', '2020-01-20', '2020-02-11', '91545' , true);
+insert into Task (TaskID, PochetenDatum, KraenDatum, ProektID, status) values ('01566', '2020-01-20', '2020-02-15', '6', false);
+insert into Task (TaskID, PochetenDatum, KraenDatum, ProektID, status) values ('19767', '2020-01-01', '2020-04-11', '77165', true);
+insert into Task (TaskID, PochetenDatum, KraenDatum, ProektID, status) values ('3725', '2020-01-13', '2020-04-17', '63831', true);
+insert into Task (TaskID, PochetenDatum, KraenDatum, ProektID, status) values ('1', '2020-02-14', '2020-07-16', '681', false);
+insert into Task (TaskID, PochetenDatum, KraenDatum, ProektID, status) values ('6145', '2020-01-07', '2020-06-14', '1', false);
+insert into Task (TaskID, PochetenDatum, KraenDatum, ProektID, status) values ('70', '2020-02-09', '2020-05-29', '55', false);
+insert into Task (TaskID, PochetenDatum, KraenDatum, ProektID, status) values ('891', '2020-02-21', '2020-08-20', '498', true);
+insert into Task (TaskID, PochetenDatum, KraenDatum, ProektID, status) values ('5', '2020-02-11', '2020-05-24', '1443', false);
