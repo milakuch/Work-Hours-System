@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Измени работник</title>
+
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="../static/jquery-3.2.1.slim.min.js"></script>
+    <link rel="stylesheet" href="../static/bootstrap.css">
+    <link rel="stylesheet" href="../static/jquery-ui.css">
+    <script src="../static/bootstrap.js"></script>
+    <script src="../static/jquery-ui.js"></script>
+    <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+
+</head>
+
+
+
+<!--<script>-->
+<!--    $( function() {-->
+<!--        $( ".datepicker" ).datepicker({-->
+<!--            showOtherMonths: true,-->
+<!--            selectOtherMonths: true-->
+<!--        });-->
+<!--    } );-->
+<!--</script>-->
+
+
+<body style="background-color: #505250 ;">
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('index') }}"> Дома <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('overview') }}"> Преглед </a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('adduser') }}"> Додади корисник</a>
+            </li>
+
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('tasks') }}"> Таскови </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('projects') }}"> Проекти </a>
+            </li>
+
+                        <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('departments') }}"> Оддели </a>
+            </li>
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <button class="btn my-2 my-sm-0" type="submit" style="background-color:#76ccb1;color:white;">Одјави се</button>
+        </form>
+    </div>
+</nav>
+
+
+
+
+
+<div class="container-fluid w-100 h-100" id="checkpoint1" style="background-color: #505250 ;">
+    <div class="row pt-5 pb-2 text-white">
+        <div class="col-12 text-center">
+            <h2 class="font-weght-normal">Измени работник</h2>
+            <hr width="100px" class="star-primary" style="border: 0.02em dashed white">
+        </div>
+    </div>
+
+                     {% if message %}
+                    <p class="message">{{ message | safe }}</p>
+                {% endif %}
+
+
+    <div class="row text-center  pt-4 mb-5 text-white" >
+
+                    {% for item in qry %}
+        <div class="  offset-2 col-4 align-items-center text-center">
+ <form  method="POST"  style="border: #f8f9fa 2px solid;" class="pt-5 pb-5">
+
+     <p>Измени вработен</p>
+     <br>
+                <p>ID: </p>
+                <p><input type="text" readonly="readonly" name="plata" value="{{item.id}}"></p>
+<br>
+                <p>Име: </p>
+                <p><input type="text" name="ime" value="{{item.ime}}"></p>
+
+                <p>Презиме: </p>
+                <p><input type="text" name="prezime" value="{{item.prezime}}"></p>
+
+                <p>Датум на раѓање(YYYY-MM-DD): </p>
+                <p> <input type="text" id="datepicker" name="datumnaragjanje" value="{{item.datumnaragjanje}}"></p>
+
+                <p>E-mail: </p>
+                <p><input type="text" name="email" value="{{item.email}}"></p>
+
+                <p>Телефонски број: </p>
+                <p><input type="text" name="telefon" value="{{item.telefon}}"></p>
+
+
+
+
+                </p>
+<br><br><br>
+                <input type="submit" formaction="/submituser" value="Измени" class="btn btn-light rounded-0 m-4" href="#" role="button">
+   <input type="submit" formaction="/deleteworker" value="Избриши" class="btn btn-light rounded-0 m-4" href="#" role="button">
+
+
+            </form>  {% endfor %}
+
+                    </div>
+
+
+
+
+
+       {% for item in qry %}
+        <div class="  col-4 align-items-center text-center">
+ <form  method="POST"  style="border: #f8f9fa 2px solid;" class="pt-5 pb-5">
+
+                <p>Измени плата и внеси работни часови </p>
+                <p>
+             <select id = "months" name="mesec" style="width:180px;height:30px;">
+               <option value = "Januari">Јануари</option>
+               <option value = "Fevruari">Февруари</option>
+               <option value = "Mart">Март</option>
+               <option value = "April">Април</option>
+               <option value = "Maj">Мај</option>
+               <option value = "Juni">Јуни</option>
+               <option value = "Juli">Јули</option>
+               <option value = "Avgust">Август</option>
+               <option value = "Septemvri">Септември</option>
+               <option value = "Oktomvri">Октомври</option>
+               <option value = "Noemvri">Ноември</option>
+               <option value = "Dekemvri">Декември</option>
+
+             </select>
+                </p>
+
+                         <p><input name="id" type="hidden" value="{{item.id}}" ></p>
+                <input type="submit" formaction="/editmonth" value="Одбери месец" class="btn btn-light rounded-0 m-4" href="#" role="button">
+            </form>
+
+
+                        {% endfor %}
+<br>
+
+ <form  method="POST"  style="border: #f8f9fa 2px solid;" class="pt-5 pb-5 ">
+
+                <p>Додади во група: (внеси ID на група)</p>
+            {% for item in qry %}
+
+                              <p><input name="rabotnikid" type="hidden" value="{{item.id}}" ></p>
+     <input name="group" type="text">
+
+                <input type="submit" formaction="/submitgroup" value="Додади" class="btn btn-light rounded-0 m-4" href="#" role="button">
+      <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Име</th>
+                </tr>
+              </thead>
+     {% for item in gg%}
+     <tr>
+         <th>{{item.id}}</th> <th>{{item.ime}}</th></tr>
+     {% endfor %}
+
+      </table>    </form>{% endfor %}
+            <br>
+
+                    </div>
+                    </div>
+
+
+
+    </div>
+
+
+
+
+
+
+</div>
+
+
+        </div>
+
+
+</div>
+
+
+</body>
+
+
+
+</html>
