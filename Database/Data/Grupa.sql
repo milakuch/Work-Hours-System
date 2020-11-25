@@ -1,0 +1,10 @@
+insert into Grupa (id,ime) values (1,'Langworth, Gislason and Kemmer');
+insert into Grupa (id,ime) values (2,'Mills LLC');
+insert into Grupa (id,ime) values (3,'Schinner and Sons');
+insert into Grupa (id,ime) values (4,'McDermott, Dietrich and Kiehn');
+insert into Grupa (id,ime) values (5,'Conn, Klocko and Shields');
+insert into Grupa (id,ime) values (6,'Ernser, Hickle and Rolfson');
+insert into Grupa (id,ime) values (7,'Balistreri, Dietrich and Kuphal');
+insert into Grupa (id,ime) values (8,'Hauck, Brown and Becker');
+insert into Grupa (id,ime) values (9,'Goldner-Gottlieb');
+insert into Grupa (id,ime) values (10,'Nolan, Ebert and Smitham');
